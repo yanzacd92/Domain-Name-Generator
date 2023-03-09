@@ -7,12 +7,16 @@ import "./assets/img/4geeks.ico";
 
 window.onload = function() {
   //write your code here
-  let pronoun = ["the", "our"];
-  let adj = ["great", "big"];
-  let noun = ["jogger", "racoon"];
-  let domain = [".com", ".net", ".us", ".io"];
-  let domains2 = pronoun.flatMap(p =>
-    adj.map(a => noun.map(n => domain.map(d => p + a + n + d)))
+  let pronounList = ["the", "our"];
+  let adjList = ["great", "big"];
+  let nounList = ["jogger", "racoon"];
+  let domainList = [".com", ".net", ".us", ".io"];
+  let domains2 = pronounList.flatMap(pronoun =>
+    adjList.map(adjective =>
+      nounList.map(noun =>
+        domainList.map(domain => pronoun + adjective + noun + domain)
+      )
+    )
   );
   let result = domains2.toString().replaceAll(",", "<br/>");
   console.log(result);
