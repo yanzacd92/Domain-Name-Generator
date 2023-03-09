@@ -11,14 +11,14 @@ window.onload = function() {
   let adjList = ["great", "big"];
   let nounList = ["jogger", "racoon"];
   let domainList = [".com", ".net", ".us", ".io"];
-  let domains2 = pronounList.flatMap(pronoun =>
+  let domainResults = pronounList.flatMap(pronoun =>
     adjList.map(adjective =>
       nounList.map(noun =>
         domainList.map(domain => pronoun + adjective + noun + domain)
       )
     )
   );
-  let result = domains2.toString().replaceAll(",", "<br/>");
+  let result = domainResults.toString().replaceAll(",", "<br/>");
   console.log(result);
   document.getElementById("combinations").innerHTML = result;
 };
